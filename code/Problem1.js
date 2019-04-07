@@ -7,22 +7,24 @@ var methods = {
             var output = [];    //lista con las medias que tendrá el array después de cada operación de adición o remoción
 
             params.operations.forEach(function (value) {
-                var splited_value = value.trim().split(" ");
-                var operation = splited_value[0].toUpperCase();
-                var item = parseInt(splited_value[1]);
+                if (value.trim().length > 0) {
+                    var splited_value = value.trim().split(" ");
+                    var operation = splited_value[0].toUpperCase();
+                    var item = parseInt(splited_value[1]);
 
-                // En función del input, se insertará o quitará cierto item del array
-                if (operation == 'A') {
-                    array = methods.add_item_to_array(array, item);
-                }
-                else {
-                    if (array.length > 0) {
-                        array = methods.remove_item_to_array(array, item);
+                    // En función del input, se insertará o quitará cierto item del array
+                    if (operation == 'A') {
+                        array = methods.add_item_to_array(array, item);
                     }
+                    else {
+                        if (array.length > 0) {
+                            array = methods.remove_item_to_array(array, item);
+                        }
+                    }
+                    // Después de la operación, se revisa la media del array
+                    var media = methods.get_media(array);
+                    output.push(media);
                 }
-                // Después de la operación, se revisa la media del array
-                var media = methods.get_media(array);
-                output.push(media);
             });
 
             res.json({ 'success': true, 'output': output });
