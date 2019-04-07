@@ -8,6 +8,13 @@ Para desplegarlo en abmiente local no hay muchas consideraciones, basta con inst
 	npm install
 	node app.js
 
+Para facilitar la verificación del código implementé una interfaz sencilla desde donde se puede ingresar casos para los problemas, en el mismo
+formato que se especifica en los enunciados. No implementé validaciones de relevancia sobre los inputs, porque no era el eje de la prueba, 
+así que recomiendo tener cuidado con los valores ingresados.
+
+Este proyecto se encuentra desplegado en heroku, a través de mi cuenta gratuita:
+https://frubana.herokuapp.com/
+
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 Problema 1:
